@@ -1,0 +1,26 @@
+<!-- booked_rooms.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked Rooms</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Booked Rooms</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for room in booked_rooms %}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{{ room.image_url }}" alt="Room Image" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h2 class="text-xl font-semibold">{{ room.description }}</h2>
+                    <p class="text-gray-600 mt-2">Room Number: {{ room.room_number }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
